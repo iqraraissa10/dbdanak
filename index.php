@@ -1,76 +1,110 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xml:lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<title>Login Admin</title>
-<link href="../favicon.ico" rel='shortcut icon'>
-<link rel="stylesheet" type="text/css" href="../style.css">
-<script type="text/javascript">
-	function validasi(form){
-		if(form.username.value==""){
-			alert("Masukkan Username..!");
-			form.username.focus();
-			return false;
-			}else if(form.password.value==""){
-				alert("Masukkan Password Anda..!");
-				form.password.focus();
-				return false;
-				}
-			form.submit();
-		}
-</script>
+    <!--
+    Created Raissa
+    -->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title><?php include"_title.php";?></title>
+    <meta name="description" content="Description" />
+    <meta name="keywords" content="Keywords" />
 
+
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+    <!--[if IE 6]><link rel="stylesheet" href="style.ie6.css" type="text/css" media="screen" /><![endif]-->
+    <!--[if IE 7]><link rel="stylesheet" href="style.ie7.css" type="text/css" media="screen" /><![endif]-->
+    <script type="text/javascript" src="jquery-1.4.3.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript">
+ $(function(){
+	$('.fadein img:gt(0)').hide();
+	setInterval(function(){$('.fadein :first-child').fadeOut().next('img').fadeIn().end().appendTo('.fadein');}, 3000);
+});
+    </script>
 </head>
-
 <body>
+<div id="art-page-background-glare">
+    <div id="art-page-background-glare-image"> </div>
+</div>
+<div id="art-main">
+    <div class="art-sheet">
+        <div class="art-sheet-tl"></div>
+        <div class="art-sheet-tr"></div>
+        <div class="art-sheet-bl"></div>
+        <div class="art-sheet-br"></div>
+        <div class="art-sheet-tc"></div>
+        <div class="art-sheet-bc"></div>
+        <div class="art-sheet-cl"></div>
+        <div class="art-sheet-cr"></div>
+        <div class="art-sheet-cc"></div>
+        <div class="art-sheet-body">
+            <div class="art-header">
+                <div class="art-header-clip">
+                <div class="art-header-center">
+                    <div class="art-header-png"></div>
+                    <div class="art-header-jpeg"></div>
+                </div>
+                </div>
+                <div class="art-headerobject"></div>
+                <div class="art-logo">
+<?php include "_judul_web.php";?>
+                                </div>
+            </div>
+            <div class="cleared reset-box"></div><div class="art-nav">
+	<div class="art-nav-l"></div>
+	<div class="art-nav-r"></div>
+<div class="art-nav-outer">
+<?php include "_menu.php";?>
+</div>
+</div>
+<div class="cleared reset-box"></div>
+<div class="art-content-layout">
+                <div class="art-content-layout-row">
+                    <div class="art-layout-cell art-content">
+<div class="art-post">
+    <div class="art-post-body">
+<div class="art-post-inner art-article">
+<div class="art-postcontent">
+<div style="display:none;"><?php $top=$_GET['top']; ?></div>
+<?php
+if(empty($top)){
+$on_top="home.php";
+echo "<meta http-equiv='refresh' content='0; url=index.php?top=home.php'>";
+}
+else{
+$on_top=$top;
+include "$on_top";
+//include "proses_diagnosa.php"; 
+}
+?>
+                </div>                                
+                <div class="cleared"></div>
+                </div>
 
-<div style="margin-top:100px;">
-<table width="500" border="0" align="center">
-    <tr>
-	 <center><font color="black" size="6" face="Courier New, Courier, monospace"><marquee><strong>Selamat Datang di Aplikasi Demam Berdarah Dengue </strong></font></center></marquee></td> 
-	 <center><font color="#FF0000" size="3" face="Arial, Helvetica, sans-serif"><strong> Halaman ini hanya dapat diakses oleh Admin yang bersangkutan</strong></em></font></center></td>
-	 <br />
-	 
-      <td height="20"><img src="../images/dbd1.jpg" width="498" height="262" align="bottom">
-    </tr>
-    <tr>
-    <td width="310" height="220">
-	<form name="form1" method="post" onSubmit="return validasi(this)" action="cekpswd.php" >
-<table width="251" border="0" align="center" cellpadding="3" cellspacing="0">
-  <tr>
-    <td colspan="3"><div align="center"><strong>Login Administrator</strong></div></td>
-    </tr>
-  <tr>
-    <td width="86">Username</td>
-    <td width="5">:</td>
-    <td width="146">
-      <input name="username" type="text" id="username">
-    </td>
-  </tr>
-  <tr>
-    <td>Password</td>
-    <td>:</td>
-    <td>
-      <input name="password" type="password" id="password">
-    </td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td><input type="submit" name="Submit" value="Login"><input type="reset" value="Reset"></td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td align="right"><a href="../index.php">Kembali</a></td>
-	</tr>
-</table>
-    </form>
-	</td>
-  </tr>
-</table></div>
+		<div class="cleared"></div>
+    </div>
+</div>
 
-<iframe style="height:1px" src="" frameborder=0 width=1></iframe>
+                      <div class="cleared"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="cleared"></div>
+            <div class="art-footer">
+                <div class="art-footer-t"></div>
+                <div class="art-footer-body">
+                            <div class="art-footer-text">
+<?php include "_footer_web.php";?>
+</div>
+                    <div class="cleared"></div>
+                </div>
+            </div>
+    		<div class="cleared"></div>
+        </div>
+    </div>
+    <blockquote>&nbsp;</blockquote>
+<div class="cleared"></div>
+    <p class="art-page-footer">&nbsp;</p>
+</div>
 </body>
 </html>
